@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\darkt\\OneDrive\\Cours developpement\\Projets\\CSharp\\GsbApp\\GsbApp.csproj": {}
+    "D:\\Projet c#\\GsbApp\\GsbApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\darkt\\OneDrive\\Cours developpement\\Projets\\CSharp\\GsbApp\\GsbApp.csproj": {
+    "D:\\Projet c#\\GsbApp\\GsbApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\darkt\\OneDrive\\Cours developpement\\Projets\\CSharp\\GsbApp\\GsbApp.csproj",
+        "projectUniqueName": "D:\\Projet c#\\GsbApp\\GsbApp.csproj",
         "projectName": "GsbApp",
-        "projectPath": "C:\\Users\\darkt\\OneDrive\\Cours developpement\\Projets\\CSharp\\GsbApp\\GsbApp.csproj",
-        "packagesPath": "C:\\Users\\darkt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\darkt\\OneDrive\\Cours developpement\\Projets\\CSharp\\GsbApp\\obj\\",
+        "projectPath": "D:\\Projet c#\\GsbApp\\GsbApp.csproj",
+        "packagesPath": "C:\\Users\\Jonathan\\.nuget\\packages\\",
+        "outputPath": "D:\\Projet c#\\GsbApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\darkt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jonathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -62,6 +62,12 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -89,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

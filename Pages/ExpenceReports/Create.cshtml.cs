@@ -1,9 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using GsbApp.Data;
 using GsbApp.Models;
 
-namespace GsbApp.Pages.Commercial
+namespace GsbApp.Pages.ExpenceReports
 {
     public class CreateModel : PageModel
     {
@@ -20,7 +25,7 @@ namespace GsbApp.Pages.Commercial
         }
 
         [BindProperty]
-        public GsbApp.Models.Commercial Commercial { get; set; }
+        public ExpenceReport ExpenceReport { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -30,7 +35,7 @@ namespace GsbApp.Pages.Commercial
                 return Page();
             }
 
-            _context.Commercials.Add(Commercial);
+            _context.ExpenceReport.Add(ExpenceReport);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

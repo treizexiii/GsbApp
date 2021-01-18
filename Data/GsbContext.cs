@@ -10,5 +10,9 @@ namespace GsbApp.Data
         }
 
         public DbSet<Commercial> Commercials { get; set; }
+        public DbSet<ExpenceReport> ExpenceReport { get; set; }
+        public DbSet<FlateRate> FlateRate { get; set; }
+        public DbSet<FlateRateCategory> FlateRateCategory { get; set; }
+        public DbSet<Status> Status { get; set; }
     }
 }

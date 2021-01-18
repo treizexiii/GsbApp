@@ -1,4 +1,3 @@
-using Microsoft.VisualBasic;
 using System.ComponentModel.DataAnnotations;
 using System;
 
@@ -14,7 +13,7 @@ namespace GsbApp.Models
         [Display(Name = "E-mail")]
         public string Email { get; set; }
         [Display(Name = "Adresse")]
-        public string adress { get; set; }
+        public string Adress { get; set; }
         [Display(Name = "Ville")]
         public string City { get; set; }
         [Display(Name = "Code Postal")]

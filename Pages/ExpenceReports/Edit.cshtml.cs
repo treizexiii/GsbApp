@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using GsbApp.Data;
 using GsbApp.Models;
 
-namespace GsbApp.Pages.Commercial
+namespace GsbApp.Pages.ExpenceReports
 {
     public class EditModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace GsbApp.Pages.Commercial
         }
 
         [BindProperty]
-        public GsbApp.Models.Commercial Commercial { get; set; }
+        public ExpenceReport ExpenceReport { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +30,9 @@ namespace GsbApp.Pages.Commercial
                 return NotFound();
             }
 
-            Commercial = await _context.Commercials.FirstOrDefaultAsync(m => m.ID == id);
+            ExpenceReport = await _context.ExpenceReport.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Commercial == null)
+            if (ExpenceReport == null)
             {
                 return NotFound();
             }
@@ -48,7 +48,7 @@ namespace GsbApp.Pages.Commercial
                 return Page();
             }
 
-            _context.Attach(Commercial).State = EntityState.Modified;
+            _context.Attach(ExpenceReport).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace GsbApp.Pages.Commercial
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CommercialExists(Commercial.ID))
+                if (!ExpenceReportExists(ExpenceReport.ID))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace GsbApp.Pages.Commercial
             return RedirectToPage("./Index");
         }
 
-        private bool CommercialExists(int id)
+        private bool ExpenceReportExists(int id)
         {
-            return _context.Commercials.Any(e => e.ID == id);
+            return _context.ExpenceReport.Any(e => e.ID == id);
         }
     }
 }

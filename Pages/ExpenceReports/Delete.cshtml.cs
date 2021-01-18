@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using GsbApp.Data;
 using GsbApp.Models;
 
-namespace GsbApp.Pages.Commercial
+namespace GsbApp.Pages.ExpenceReports
 {
     public class DeleteModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace GsbApp.Pages.Commercial
         }
 
         [BindProperty]
-        public GsbApp.Models.Commercial Commercial { get; set; }
+        public ExpenceReport ExpenceReport { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace GsbApp.Pages.Commercial
                 return NotFound();
             }
 
-            Commercial = await _context.Commercials.FirstOrDefaultAsync(m => m.ID == id);
+            ExpenceReport = await _context.ExpenceReport.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Commercial == null)
+            if (ExpenceReport == null)
             {
                 return NotFound();
             }
@@ -45,11 +45,11 @@ namespace GsbApp.Pages.Commercial
                 return NotFound();
             }
 
-            Commercial = await _context.Commercials.FindAsync(id);
+            ExpenceReport = await _context.ExpenceReport.FindAsync(id);
 
-            if (Commercial != null)
+            if (ExpenceReport != null)
             {
-                _context.Commercials.Remove(Commercial);
+                _context.ExpenceReport.Remove(ExpenceReport);
                 await _context.SaveChangesAsync();
             }
 
