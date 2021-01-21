@@ -1,5 +1,5 @@
 ﻿@page
-@model GsbApp.Pages.ExpenceReports.EditModel
+@model GsbApp.Pages.ExpenseReports.EditModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -13,7 +13,12 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ExpenceReport.ID" />
+            <input type="hidden" asp-for="ExpenceReport.IdExpenceReport" />
+            <div class="form-group">
+                <label asp-for="ExpenceReport.Date" class="control-label"></label>
+                <input asp-for="ExpenceReport.Date" class="form-control" />
+                <span asp-validation-for="ExpenceReport.Date" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="ExpenceReport.Document" class="control-label"></label>
                 <input asp-for="ExpenceReport.Document" class="form-control" />
@@ -28,6 +33,21 @@
                 <label asp-for="ExpenceReport.CheckDate" class="control-label"></label>
                 <input asp-for="ExpenceReport.CheckDate" class="form-control" />
                 <span asp-validation-for="ExpenceReport.CheckDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpenceReport.IdStatus" class="control-label"></label>
+                <input asp-for="ExpenceReport.IdStatus" class="form-control" />
+                <span asp-validation-for="ExpenceReport.IdStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpenceReport.IdCommercial" class="control-label"></label>
+                <input asp-for="ExpenceReport.IdCommercial" class="form-control" />
+                <span asp-validation-for="ExpenceReport.IdCommercial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpenceReport.IdFlateRateCategory" class="control-label"></label>
+                <input asp-for="ExpenceReport.IdFlateRateCategory" class="form-control" />
+                <span asp-validation-for="ExpenceReport.IdFlateRateCategory" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using GsbApp.Data;
 using GsbApp.Models;
 
-namespace GsbApp.Pages.ExpenceReports
+namespace GsbApp.Pages.ExpenseReports
 {
     public class EditModel : PageModel
     {
@@ -30,7 +30,7 @@ namespace GsbApp.Pages.ExpenceReports
                 return NotFound();
             }
 
-            ExpenceReport = await _context.ExpenceReport.FirstOrDefaultAsync(m => m.ID == id);
+            ExpenceReport = await _context.ExpenceReport.FirstOrDefaultAsync(m => m.IdExpenceReport == id);
 
             if (ExpenceReport == null)
             {
@@ -56,7 +56,7 @@ namespace GsbApp.Pages.ExpenceReports
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ExpenceReportExists(ExpenceReport.ID))
+                if (!ExpenceReportExists(ExpenceReport.IdExpenceReport))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace GsbApp.Pages.ExpenceReports
 
         private bool ExpenceReportExists(int id)
         {
-            return _context.ExpenceReport.Any(e => e.ID == id);
+            return _context.ExpenceReport.Any(e => e.IdExpenceReport == id);
         }
     }
 }

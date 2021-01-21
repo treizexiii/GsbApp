@@ -18,7 +18,7 @@ namespace GsbApp.Migrations
 
             modelBuilder.Entity("GsbApp.Models.Commercial", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("IdCommercial")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -46,14 +46,14 @@ namespace GsbApp.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ID");
+                    b.HasKey("IdCommercial");
 
                     b.ToTable("Commercials");
                 });
 
             modelBuilder.Entity("GsbApp.Models.ExpenceReport", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("IdExpenceReport")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -63,59 +63,44 @@ namespace GsbApp.Migrations
                     b.Property<DateTime>("CheckDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("CommercialID")
+                    b.Property<int?>("CommercialIdCommercial")
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Document")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("FlateRateID")
+                    b.Property<int?>("FlateRateCategoryIdFlateRateCategory")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("IdCommercial")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("IdFlateRateCategory")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("IdStatus")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("StatusID")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("ID");
+                    b.HasKey("IdExpenceReport");
 
-                    b.HasIndex("CommercialID");
+                    b.HasIndex("CommercialIdCommercial");
 
-                    b.HasIndex("FlateRateID");
+                    b.HasIndex("FlateRateCategoryIdFlateRateCategory");
 
                     b.HasIndex("StatusID");
 
                     b.ToTable("ExpenceReport");
                 });
 
-            modelBuilder.Entity("GsbApp.Models.FlateRate", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("CommercialID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("FlateRateCategoryID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("CommercialID");
-
-                    b.HasIndex("FlateRateCategoryID");
-
-                    b.ToTable("FlateRate");
-                });
-
             modelBuilder.Entity("GsbApp.Models.FlateRateCategory", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("IdFlateRateCategory")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -125,7 +110,7 @@ namespace GsbApp.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ID");
+                    b.HasKey("IdFlateRateCategory");
 
                     b.ToTable("FlateRateCategory");
                 });
@@ -147,12 +132,12 @@ namespace GsbApp.Migrations
             modelBuilder.Entity("GsbApp.Models.ExpenceReport", b =>
                 {
                     b.HasOne("GsbApp.Models.Commercial", "Commercial")
-                        .WithMany()
-                        .HasForeignKey("CommercialID");
+                        .WithMany("expenceReports")
+                        .HasForeignKey("CommercialIdCommercial");
 
-                    b.HasOne("GsbApp.Models.FlateRate", "FlateRate")
+                    b.HasOne("GsbApp.Models.FlateRateCategory", "FlateRateCategory")
                         .WithMany()
-                        .HasForeignKey("FlateRateID");
+                        .HasForeignKey("FlateRateCategoryIdFlateRateCategory");
 
                     b.HasOne("GsbApp.Models.Status", "Status")
                         .WithMany()
@@ -160,24 +145,14 @@ namespace GsbApp.Migrations
 
                     b.Navigation("Commercial");
 
-                    b.Navigation("FlateRate");
+                    b.Navigation("FlateRateCategory");
 
                     b.Navigation("Status");
                 });
 
-            modelBuilder.Entity("GsbApp.Models.FlateRate", b =>
+            modelBuilder.Entity("GsbApp.Models.Commercial", b =>
                 {
-                    b.HasOne("GsbApp.Models.Commercial", "Commercial")
-                        .WithMany()
-                        .HasForeignKey("CommercialID");
-
-                    b.HasOne("GsbApp.Models.FlateRateCategory", "FlateRateCategory")
-                        .WithMany()
-                        .HasForeignKey("FlateRateCategoryID");
-
-                    b.Navigation("Commercial");
-
-                    b.Navigation("FlateRateCategory");
+                    b.Navigation("expenceReports");
                 });
 #pragma warning restore 612, 618
         }

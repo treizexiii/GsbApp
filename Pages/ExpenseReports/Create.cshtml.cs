@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using GsbApp.Data;
 using GsbApp.Models;
 
-namespace GsbApp.Pages.ExpenceReports
+namespace GsbApp.Pages.ExpenseReports
 {
     public class CreateModel : PageModel
     {

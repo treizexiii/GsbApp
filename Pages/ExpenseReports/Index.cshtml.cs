@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using GsbApp.Data;
 using GsbApp.Models;
 
-namespace GsbApp.Pages.ExpenceReports
+namespace GsbApp.Pages.ExpenseReports
 {
     public class IndexModel : PageModel
     {

@@ -344,8 +344,8 @@ D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\Commercials\Delete.cshtml.g.cs
 D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\Commercials\Details.cshtml.g.cs
 D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\Commercials\Edit.cshtml.g.cs
 D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\Commercials\Index.cshtml.g.cs
-D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\ExpenceReports\Create.cshtml.g.cs
-D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\ExpenceReports\Delete.cshtml.g.cs
-D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\ExpenceReports\Details.cshtml.g.cs
-D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\ExpenceReports\Edit.cshtml.g.cs
-D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\ExpenceReports\Index.cshtml.g.cs
+D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\ExpenseReports\Create.cshtml.g.cs
+D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\ExpenseReports\Delete.cshtml.g.cs
+D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\ExpenseReports\Details.cshtml.g.cs
+D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\ExpenseReports\Edit.cshtml.g.cs
+D:\Projet c#\GsbApp\obj\Debug\net5.0\Razor\Pages\ExpenseReports\Index.cshtml.g.cs

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GsbApp.Models.Commercial">
+    <Position X="3.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEQEACAAAAAIAAAQAAAAAAgAAAACAAAAAAAIAAg=</HashCode>
+      <FileName>Models\Commercial.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="expenceReports" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GsbApp.Models.ExpenceReport">
+    <Position X="6.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAQEAEAAAAAAAQAAAAAAAAAgABADAABAAAAAAAA=</HashCode>
+      <FileName>Models\ExpenceReport.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+      <Property Name="Commercial" />
+      <Property Name="FlateRateCategory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GsbApp.Models.FlateRateCategory">
+    <Position X="9.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Models\FlateRateCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GsbApp.Models.Status">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

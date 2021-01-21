@@ -30,7 +30,7 @@ namespace GsbApp.Pages.Commercials
                 return NotFound();
             }
 
-            Commercial = await _context.Commercials.FirstOrDefaultAsync(m => m.ID == id);
+            Commercial = await _context.Commercials.FirstOrDefaultAsync(m => m.IdCommercial == id);
 
             if (Commercial == null)
             {
@@ -56,7 +56,7 @@ namespace GsbApp.Pages.Commercials
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CommercialExists(Commercial.ID))
+                if (!CommercialExists(Commercial.IdCommercial))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace GsbApp.Pages.Commercials
 
         private bool CommercialExists(int id)
         {
-            return _context.Commercials.Any(e => e.ID == id);
+            return _context.Commercials.Any(e => e.IdCommercial == id);
         }
     }
 }

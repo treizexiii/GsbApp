@@ -28,7 +28,7 @@ namespace GsbApp.Pages.Commercials
                 return NotFound();
             }
 
-            Commercial = await _context.Commercials.FirstOrDefaultAsync(m => m.ID == id);
+            Commercial = await _context.Commercials.FirstOrDefaultAsync(m => m.IdCommercial == id);
 
             if (Commercial == null)
             {

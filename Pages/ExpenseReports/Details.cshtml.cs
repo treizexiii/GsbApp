@@ -8,18 +8,17 @@ using Microsoft.EntityFrameworkCore;
 using GsbApp.Data;
 using GsbApp.Models;
 
-namespace GsbApp.Pages.ExpenceReports
+namespace GsbApp.Pages.ExpenseReports
 {
-    public class DeleteModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly GsbApp.Data.GsbContext _context;
 
-        public DeleteModel(GsbApp.Data.GsbContext context)
+        public DetailsModel(GsbApp.Data.GsbContext context)
         {
             _context = context;
         }
 
-        [BindProperty]
         public ExpenceReport ExpenceReport { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -29,31 +28,13 @@ namespace GsbApp.Pages.ExpenceReports
                 return NotFound();
             }
 
-            ExpenceReport = await _context.ExpenceReport.FirstOrDefaultAsync(m => m.ID == id);
+            ExpenceReport = await _context.ExpenceReport.FirstOrDefaultAsync(m => m.IdExpenceReport == id);
 
             if (ExpenceReport == null)
             {
                 return NotFound();
             }
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            ExpenceReport = await _context.ExpenceReport.FindAsync(id);
-
-            if (ExpenceReport != null)
-            {
-                _context.ExpenceReport.Remove(ExpenceReport);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
         }
     }
 }
